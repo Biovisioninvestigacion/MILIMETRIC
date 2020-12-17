@@ -1,0 +1,59 @@
+﻿@model CitraDataStore.Models.Admins
+
+@{
+    ViewData["Title"] = "Eliminar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        @ViewData["Title"]
+    </h1>
+</section>
+
+<!-- Main content -->
+<div class="card shadow mb-4 text-center">
+
+        <!-- left column -->
+        <div class="card-header py-3">
+            <h3 class="m-0 font-weight-bold text-primary">¿Seguro que quiere borrar al usuario?</h3>
+        </div>
+        <div class="card-body">
+
+
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FullName)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Roles)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Roles.Title)
+                    </dd>
+                </dl>
+
+        </div>
+        <form method="post" action="/Admins/DeleteConfirmed">
+            <div class="card-footer">
+                <input type="hidden" name="id" value="@Model.Id" />
+                    <input type="submit" value="Borrar" class="btn btn-danger" />
+                
+
+            </div>
+        </form>
+
+
+
+
+</div>
